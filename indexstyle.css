@@ -3,7 +3,7 @@
     padding: 0;
 }
 .bg-image{
-    background: url('Hu.jpg');
+    background: url('hu.jpg');
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
@@ -183,6 +183,8 @@
         border: none;
     }
 
-
+.sub-header .right-menu-sign-in{
+  border-top :1px dashed #333;
+}
 
 }
