@@ -1,46 +1,81 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link href="https://fonts.googleapis.com/css?family=Playfair+Display|Roboto|Roboto+Condensed|Roboto+Slab" rel="stylesheet">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <title>Don'T Clan HOME</title>
-    <link rel="stylesheet" href="indexstyle.css">
-    <script src="sticky.js"></script>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta http-equiv="X-UA-Compatible" content="ie=edge">
+      <title>NaD3 Join</title>
+      <link href="https://fonts.googleapis.com/css?family=Orbitron" rel="stylesheet">
+      <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
+      <link rel="stylesheet" href="ENTERED.css">
 </head>
 <body>
-    <header class="bg-image">
-        <div class="bw-gradient"></div>
-        <div class="header">
-            <div class="sub-header">
-                    <ul class="left-menu">
-                            <li><a href="#">EVENTS</a></li>
-                            <li><a href="#">ABOUT US</a></li>
-                            <li><a href="#">CONTACT US</a></li>
-                            <li><a href="#">SIGN Up</a></li>
-                          </ul>
-                        <div class="logo">
-                            <a href="#">Don'T Clan</a>
-                        </div>
-                        <ul class="right-menu">
-                            <li><a href="#">SIGN In</a></li>
-                            <li><a href="#">HOME</a></li>
-                            <li><a href="#">GALLARY</a></li>
-                            <li><a href="#">NEWS</a></li>
-                        </ul>
-            </div>
 
+     <div class="content">
+          <div class="random">
+               <span class="nbr ltr">0</span>
+               <span class="nbr ltr">0</span>
+               <span class="nbr ltr">0</span>
+               <span class="nbr ltr">0</span>
+               <span class="nbr ltr">0</span>
+               <span class="nbr ltr">0</span>
+               <span class="nbr ltr">0</span>
+               <span class="nbr ltr">0</span>
+          </div>
+     </div>
+
+     <script type="text/javascript">
+
+     $(document).ready(function() {
+
+     var $randomnbr = $('.nbr');
+     var $timer = 40;
+     var $it;
+     var $data = 0;
+     var index;
+     var change;
+     var letters = ["D", "O", "N", "T", "C", "L", "A", "N"];
+
+     $randomnbr.each(function() {
+
+     change = Math.round(Math.random()*100);
+     $(this).attr('data-change', change);
+
+     });
+
+     function random() {
+          return Math.round(Math.random()*9);
+     };
+
+     function select() {
+          return Math.round(Math.random()*$randomnbr.length+1);
+     };
+
+     function value() {
+          $('.nbr:nth-child('+select()+')').html(''+random()+'');
+          $('.nbr:nth-child('+select()+')').attr('data-number', $data);
+          $data++;
+
+          $randomnbr.each(function() {
+               if(parseInt($(this).attr('data-number')) > parseInt($(this).attr('data-change'))) {
+                    index = $('.ltr').index(this);
+                    $(this).html(letters[index]);
+                    $(this).removeClass('nbr');
+               }
+          });
+     };
+
+     $it = setInterval(value, $timer);
+
+     });
+
+     </script>
+
+    <div class="wrapper">
+        <div class="btn">
+            <a href="NaD3.html"><button type="button">ENTER</button></a>
         </div>
-    </header>
+    </div>
 
-    <p class="para">
-
-    </p>
-
-    <p class="para">
-
-        </p>
 </body>
 </html>

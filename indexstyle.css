@@ -98,9 +98,9 @@
 }
 
 .para{
-    font-family: 'Playfair Display', sans-serif;
+    font-family: 'Playfair Display', ;
     margin: 50px;
-    font-size: 16px;
+    font-size: 19px;
 }
 
 @media screen and (max-width:1200px){
